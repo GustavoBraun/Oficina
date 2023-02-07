@@ -33,7 +33,7 @@ public class UsuarioService {
 		return usuario;	
 	}
 	
-	public Usuario inserir(Usuario usuario) {
+	public Usuario inserirUsuario(Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}
 	

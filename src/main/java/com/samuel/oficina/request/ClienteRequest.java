@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class ClienteRequest {
+
+	private Short idCliente;
 	
 	private String CPF;
 	

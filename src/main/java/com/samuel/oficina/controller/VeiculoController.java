@@ -3,6 +3,7 @@ package com.samuel.oficina.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import com.samuel.oficina.request.VeiculoRequest;
 import com.samuel.oficina.response.VeiculoResponse;
 import com.samuel.oficina.service.VeiculoService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("veiculos")
 public class VeiculoController {
@@ -40,7 +42,7 @@ public class VeiculoController {
 		
 		Veiculo veiculo = VeiculoMapper.toVeiculo(request);
 		
-		VeiculoResponse response = VeiculoMapper.toVeiculoResponse(veiculoService.inserir(veiculo));
+		VeiculoResponse response = VeiculoMapper.toVeiculoResponse(veiculoService.inserirVeiculo(veiculo));
 		
 		return response;
 	}
@@ -55,7 +57,7 @@ public class VeiculoController {
 		
 		Veiculo veiculo = VeiculoMapper.toVeiculo(request);
 		
-		VeiculoResponse response = VeiculoMapper.toVeiculoResponse(veiculoService.inserir(veiculo));
+		VeiculoResponse response = VeiculoMapper.toVeiculoResponse(veiculoService.inserirVeiculo(veiculo));
 		
 		return response;
 	}

@@ -7,6 +7,7 @@ import com.samuel.oficina.response.PermissaoResponse;
 public class PermissaoMapper {
 	public static Permissoes toPermissoes(PermissaoRequest request) {
 		Permissoes permissao = new Permissoes();
+		permissao.setIdPermissao(request.getIdPermissao());
 		permissao.setIdcargo(request.getIdcargo());
 		permissao.setIdtela(request.getIdtela());
 		return permissao;

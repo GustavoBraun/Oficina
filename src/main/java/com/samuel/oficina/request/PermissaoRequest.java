@@ -9,6 +9,9 @@ import lombok.Data;
 @Data
 public class PermissaoRequest {
 
+	private Short idPermissao;
+
+
 	private Telas idtela;
 	
 

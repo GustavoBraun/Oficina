@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrdemRequest {
 
+	private Short idOrdem;
 
 	private Veiculo idVeiculo;
 }

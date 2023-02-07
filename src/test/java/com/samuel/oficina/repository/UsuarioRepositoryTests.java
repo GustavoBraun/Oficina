@@ -2,15 +2,12 @@ package com.samuel.oficina.repository;
 
 import java.util.List;
 
-import org.apache.catalina.User;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.samuel.oficina.domain.Cargo;
 import com.samuel.oficina.domain.Usuario;
-import com.samuel.oficina.service.UsuarioService;
 
 @SpringBootTest
 public class UsuarioRepositoryTests {

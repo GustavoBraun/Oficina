@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MecanicoRequest {
 
-	
+	private Short idMecanico;
+
 	private Usuario idUsuario;
 
 	private OrdemServico IdOrdem;

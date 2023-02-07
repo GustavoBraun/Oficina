@@ -7,6 +7,7 @@ import com.samuel.oficina.response.ClienteResponse;
 public class ClienteMapper {
 	public static Cliente toCliente(ClienteRequest request) {
 		Cliente cliente = new Cliente();
+		cliente.setIdCliente(request.getIdCliente());
 		cliente.setCPF(request.getCPF());
 		cliente.setEmail(request.getEmail());
 		cliente.setNome(request.getNome());

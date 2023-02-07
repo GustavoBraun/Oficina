@@ -9,6 +9,7 @@ public class VeiculoMapper {
 		
 		Veiculo veiculo = new Veiculo();
 		veiculo.setAno(request.getAno());
+		veiculo.setIdVeiculo(request.getIdVeiculo());
 		veiculo.setCor(request.getCor());
 		veiculo.setIdCliente(request.getIdCliente());
 		veiculo.setIdVeiculo(request.getIdVeiculo());

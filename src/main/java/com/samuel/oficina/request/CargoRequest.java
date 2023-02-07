@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class CargoRequest {
+	private Short id;
 	
 	private String nome;
 }

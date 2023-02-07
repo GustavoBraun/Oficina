@@ -7,6 +7,7 @@ import com.samuel.oficina.response.UsuarioResponse;
 public class UsuarioMapper {
 	public static Usuario toUsuario(UsuarioRequest usuarioRequest) {
 		Usuario usuario = new Usuario();
+		usuario.setIdUsuario(usuarioRequest.getIdUsuario());
 		usuario.setNome(usuarioRequest.getNome());
 		usuario.setEmail(usuarioRequest.getEmail());
 		usuario.setIdcargo(usuarioRequest.getIdcargo());

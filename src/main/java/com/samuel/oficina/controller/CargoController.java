@@ -3,6 +3,7 @@ package com.samuel.oficina.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,16 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.samuel.oficina.domain.Cargo;
 import com.samuel.oficina.mapper.CargoMapper;
+import com.samuel.oficina.repository.CargoRepository;
 import com.samuel.oficina.request.CargoRequest;
 import com.samuel.oficina.response.CargoResponse;
 import com.samuel.oficina.service.CargoService;
 
 @RestController
 @RequestMapping("cargos")
+@CrossOrigin(origins = "*")
 public class CargoController {
 
 	@Autowired
 	private CargoService cargoService;
+
+	@Autowired
+	private CargoRepository cargoRepository;
 	
 	@GetMapping
 	public List<Cargo> listarCargos(){
@@ -51,7 +57,7 @@ public class CargoController {
 
 		Cargo cargo = CargoMapper.toCargo(request);
 		
-		CargoResponse response = CargoMapper.toCargoResponse(cargoService.inserirCargo(cargo));
+		CargoResponse response = CargoMapper.toCargoResponse(cargoRepository.save(cargo));
 		
 		return response;
 	}

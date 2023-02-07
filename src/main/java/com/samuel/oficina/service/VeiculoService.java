@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.samuel.oficina.Exception.BusinessException;
 import com.samuel.oficina.domain.Veiculo;
 import com.samuel.oficina.repository.VeiculoRepository;
 
@@ -17,9 +18,7 @@ public class VeiculoService {
 	
 	public List<Veiculo> listarVeiculos() {
 		List<Veiculo> veiculos = veiculoRepository.findAll();
-		if (veiculos.isEmpty()) {
-			throw new RuntimeException("Não existem veículos cadastrados.");
-		}
+
 		return veiculos;
 	}
 	
@@ -31,7 +30,10 @@ public class VeiculoService {
 		return veiculoEncontrado.get();
 	}
 	
-	public Veiculo inserir(Veiculo veiculo) {
+	public Veiculo inserirVeiculo(Veiculo veiculo) {
+		if (veiculo.getPlaca().equals("")) {
+			throw new BusinessException("A placa é obrigatória!");
+		}
 		return veiculoRepository.save(veiculo);
 	}
 	

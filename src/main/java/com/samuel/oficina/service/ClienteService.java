@@ -27,13 +27,13 @@ public class ClienteService {
 	public Cliente buscarCliente(Short id) {
 		Optional<Cliente> clienteEncontrado = clienteRepository.findById(id);
 		if (clienteEncontrado.isEmpty()) {
-			throw new RuntimeException("Cliente não encontrado.");
+			throw new BusinessException("Cliente não encontrado.");
 		}
 		return clienteEncontrado.get();
 		
 	}
 	
-	public Cliente inserir(Cliente cliente) {
+	public Cliente inserirCliente(Cliente cliente) {
 		boolean existeCpf = false;
 		
 		

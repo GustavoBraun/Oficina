@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UsuarioRequest {
 	
+	private Short idUsuario;
+
 	private String nome;
 	
 	private String email;

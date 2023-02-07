@@ -3,6 +3,7 @@ package com.samuel.oficina.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,16 +15,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.samuel.oficina.domain.Cliente;
 import com.samuel.oficina.mapper.ClienteMapper;
+import com.samuel.oficina.repository.ClienteRepository;
 import com.samuel.oficina.request.ClienteRequest;
 import com.samuel.oficina.response.ClienteResponse;
 import com.samuel.oficina.service.ClienteService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("clientes")
 public class ClienteController {
 	
 	@Autowired
 	private ClienteService clienteService;
+
+	@Autowired ClienteRepository clienteRepository;
 	
 	@GetMapping
 	public List<Cliente> listarClientes() {
@@ -40,7 +45,7 @@ public class ClienteController {
 		
 		Cliente cliente = ClienteMapper.toCliente(request);
 		
-		ClienteResponse response = ClienteMapper.toClienteResponse(clienteService.inserir(cliente));
+		ClienteResponse response = ClienteMapper.toClienteResponse(clienteService.inserirCliente(cliente));
 		
 		return response;
 	}
@@ -52,11 +57,8 @@ public class ClienteController {
 	
 	@PutMapping
 	public ClienteResponse editarCliente(@RequestBody ClienteRequest request) {
-		
 		Cliente cliente = ClienteMapper.toCliente(request);
-		
-		ClienteResponse response = ClienteMapper.toClienteResponse(clienteService.inserir(cliente));
-		
+		ClienteResponse response = ClienteMapper.toClienteResponse(clienteService.inserirCliente(cliente));
 		return response;
 	}
 }

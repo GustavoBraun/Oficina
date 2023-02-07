@@ -7,6 +7,7 @@ import com.samuel.oficina.response.OrdemResponse;
 public class OrdemMapper {
 	public static OrdemServico toOrdemServico(OrdemRequest request) {
 		OrdemServico ordem = new OrdemServico();
+		ordem.setIdOrdem(request.getIdOrdem());
 		ordem.setIdVeiculo(request.getIdVeiculo());
 		return ordem;
 	}

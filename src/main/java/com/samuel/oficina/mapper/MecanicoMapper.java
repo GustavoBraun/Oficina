@@ -8,7 +8,7 @@ public class MecanicoMapper {
 	public static Mecanico toMecanico (MecanicoRequest request) {
 		
 		Mecanico mecanico = new Mecanico();
-		
+		mecanico.setIdMecanico(request.getIdMecanico());
 		mecanico.setIdUsuario(request.getIdUsuario());
 		mecanico.setIdOrdem(request.getIdOrdem());
 		

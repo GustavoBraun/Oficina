@@ -8,7 +8,7 @@ public class CargoMapper {
 	public static Cargo toCargo(CargoRequest request) {
 		
 		Cargo cargo = new Cargo();
-		
+		cargo.setId(request.getId());
 		cargo.setNome(request.getNome());
 		return cargo;
 	}
